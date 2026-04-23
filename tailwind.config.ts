@@ -13,12 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        bone: "hsl(var(--bone))",
+        dust: "hsl(var(--dust))",
+        void: "hsl(var(--void))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

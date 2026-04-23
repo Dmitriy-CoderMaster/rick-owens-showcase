@@ -1,16 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import Nav from "@/components/site/Nav";
+import Hero from "@/components/site/Hero";
+import Marquee from "@/components/site/Marquee";
+import Collection from "@/components/site/Collection";
+import Lookbook from "@/components/site/Lookbook";
+import Manifesto from "@/components/site/Manifesto";
+import Footer from "@/components/site/Footer";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  useEffect(() => {
+    document.title = "Rick Owens — Trinity FW26 Collection";
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Rick Owens FW26 — Trinity of dust. New collection of avant-garde garments, leather, drape and silhouette.");
+
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="grain">
+      <Nav />
+      <Hero />
+      <Marquee />
+      <Collection />
+      <Lookbook />
+      <Manifesto />
+      <Footer />
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
