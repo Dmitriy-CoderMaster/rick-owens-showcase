@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -127,3 +127,15 @@
     transform: translateY(0);
   }
 }
+
+@keyframes hk-rise {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+  100% { transform: translate(-50%, -180%) scale(1.2); opacity: 0; }
+}
+@keyframes hk-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-hk-rise { animation: hk-rise 0.9s ease-out forwards; }
+.animate-hk-float { animation: hk-float 4s ease-in-out infinite; }
+

@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         display: ['"Cormorant Garamond"', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        hk: ['Manrope', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -26,6 +27,13 @@ export default {
         bone: "hsl(var(--bone))",
         dust: "hsl(var(--dust))",
         void: "hsl(var(--void))",
+        "hk-bg": "hsl(var(--hk-bg))",
+        "hk-card": "hsl(var(--hk-card))",
+        "hk-border": "hsl(var(--hk-border))",
+        "hk-text": "hsl(var(--hk-text))",
+        "hk-muted": "hsl(var(--hk-muted))",
+        "hk-accent": "hsl(var(--hk-accent))",
+        "hk-accent2": "hsl(var(--hk-accent2))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
