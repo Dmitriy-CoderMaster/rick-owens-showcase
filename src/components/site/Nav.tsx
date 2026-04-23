@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-const links = ["Collection", "Lookbook", "Atelier", "Stockists", "Journal"];
+const links = [
+  { label: "Collection", href: "/" },
+  { label: "Lookbook", href: "/#lookbook" },
+  { label: "Atelier", href: "/#atelier" },
+  { label: "Kombat", href: "/kombat" },
+];
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -19,15 +24,15 @@ const Nav = () => {
       }`}
     >
       <nav className="flex items-center justify-between px-6 md:px-12 py-5">
-        <a href="#" className="display text-xl md:text-2xl tracking-tight">
+        <a href="/" className="display text-xl md:text-2xl tracking-tight">
           RICK / OWENS
         </a>
 
         <ul className="hidden md:flex items-center gap-10 micro text-foreground/80">
           {links.map((l) => (
-            <li key={l}>
-              <a href={`#${l.toLowerCase()}`} className="hover:text-bone transition-colors">
-                {l}
+            <li key={l.label}>
+              <a href={l.href} className="hover:text-bone transition-colors">
+                {l.label}
               </a>
             </li>
           ))}
@@ -53,9 +58,9 @@ const Nav = () => {
         <div className="md:hidden border-t border-border bg-background">
           <ul className="flex flex-col px-6 py-8 gap-6 micro">
             {links.map((l) => (
-              <li key={l}>
-                <a href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)}>
-                  {l}
+              <li key={l.label}>
+                <a href={l.href} onClick={() => setOpen(false)}>
+                  {l.label}
                 </a>
               </li>
             ))}
